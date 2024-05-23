@@ -19,4 +19,9 @@ public class ControllerExceptionAdvice {
     public ResponseEntity<String> handleMethodArgumentTypeMismatchException(MethodArgumentTypeMismatchException e) {
         return new ResponseEntity<>("Invalid/Incompatible Argument type passed.\n"+e.getStackTrace(), HttpStatus.BAD_REQUEST);
     }
+
+    @ExceptionHandler(InternalError.class)
+    public ResponseEntity<String> handleEntityInternalErrorException(InternalError e) {
+        return new ResponseEntity<>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
+    }
 }
