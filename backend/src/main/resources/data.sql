@@ -26,4 +26,7 @@ INSERT INTO ROOM (FLOOR, CAPACITY, BUILDING_ID, ID, NAME, DIRECTIONS, IMAGES, ST
 
 INSERT INTO ROOM (FLOOR, CAPACITY, BUILDING_ID, ID, NAME, DIRECTIONS, IMAGES, STATIONERY) VALUES ('15', '100', 'PAR-B1', 'PAR-B1-ID1', 'Paris Building Room 1', 'Paris Building Room 1 Directions', ARRAY ['https://picsum.photos/1024/1024', 'https://picsum.photos/1024/1024', 'https://picsum.photos/1024/1024', 'https://picsum.photos/1024/1024'], ARRAY ['projector']);
 
-ADJACENT_ROOMS ARRAY [];
+CREATE TABLE ADJACENT_ROOMS (
+  room1 ROOM;
+  room2 ROOM;
+);
