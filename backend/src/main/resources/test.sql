@@ -5,5 +5,6 @@ CREATE TABLE test (
 )
 
 ALTER TABLE test
-ADD second_column VARCHAR
+ADD second_column VARCHAR(100)
 ADD third_column DOUBLE;
+
