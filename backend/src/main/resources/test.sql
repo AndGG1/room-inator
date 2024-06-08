@@ -1,10 +1,24 @@
-CREATE DATABASE record_company;
+//Initialization process
+CREATE record_company;
 USE record_company;
-CREATE TABLE test (
-  first_column INTEGER;
-)
 
-ALTER TABLE test
-ADD second_column VARCHAR(100)
-ADD third_column DOUBLE;
+CREATE TABLE bands (
+  //'Primary key' -- how you acces this table
+  id INTEGER NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (id),
+  
+  //tables commas/'values'
+  name VARCHAR(100) NOT NULL
+);
 
+CREATE TABLE album (
+  //'Primary key and Foreign Key' -- used to acces an outer table that needs to be used/ref here
+  id INTEGER NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (id),
+  band_id INTEGER NOT NULL,
+  FOREIGN KEY (band_id) REFERENCES bands(id),
+  
+  //tables commas/'values'
+  name VARCHAR(50) NOT NULL,
+  release_year INTEGER,
+);
