@@ -22,3 +22,12 @@ CREATE TABLE album (
   name VARCHAR(50) NOT NULL,
   release_year INTEGER,
 );
+
+//adding bands
+INSERT INTO bands (name) VALUES ('Imagine Dragons'), ('Royal Blood'),
+  ('Queen'), ('Maneskin');
+
+//'selecting data'
+SELECT * FROM bands;
+SELECT * FROM bands LIMIT 2;
+
